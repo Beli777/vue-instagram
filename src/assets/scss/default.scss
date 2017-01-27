@@ -21,7 +21,8 @@
 @import 'config/typography';
 @import 'config/helpers';
 
-//------COMPONENTS
+//------LIBRARY
+@import "library/bootstrap";
 
 //------BLOCKS
 @import 'blocks/header/header';
