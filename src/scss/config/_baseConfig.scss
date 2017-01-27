@@ -27,6 +27,11 @@ html, body {
 .wrapper{
   width: 80%;
   display: inline-block;
+  vertical-align: top;
+  padding: 5rem 5rem 0rem 5rem;
+}
+h1{
+    text-align: center;
 }
 img {
 	display: block;
