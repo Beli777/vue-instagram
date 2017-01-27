@@ -13,7 +13,7 @@ Vue.use(VueRouter)
 //--Progress Bar
 const options = {
   color: 'green',
-  failedColor: '#874b4b',
+  failedColor: 'red',
   thickness: '5px',
   transition: {
     speed: '0.2s',
@@ -23,7 +23,6 @@ const options = {
   location: 'top',
   inverse: false
 }
-
 Vue.use(VueProgressBar, options)
 
 // Routing logic
