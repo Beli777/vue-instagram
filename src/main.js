@@ -5,7 +5,6 @@ import VueProgressBar from 'vue-progressbar'
 import Resource from 'vue-resource'
 import VueRouter from 'vue-router'
 import routes from './routes'
-import NewsFeed from './components/NewsFeed'
 
 // Resource logic
 Vue.use(Resource)

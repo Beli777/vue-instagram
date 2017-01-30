@@ -3,6 +3,7 @@
     <vue-progress-bar></vue-progress-bar>
     <navigation></navigation>
     <div class="wrapper">
+
         <router-view></router-view>
     </div>
   </div>
@@ -10,7 +11,6 @@
 
 <script>
 import Navigation from './components/Navigation'
-
 export default {
   name: 'app',
   components: {
