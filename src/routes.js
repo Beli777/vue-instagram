@@ -1,5 +1,6 @@
 import Register from './components/Register'
 import Login from './components/Login'
+import NewsFeed from './components/NewsFeed'
 
 
 // Routes
@@ -11,6 +12,10 @@ const routes = [
   {
     path: '/login',
     component: Login
+  },
+  {
+    path: '/newsfeed',
+    component: NewsFeed
   }
 ]
 

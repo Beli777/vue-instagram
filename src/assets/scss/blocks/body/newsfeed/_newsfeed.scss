@@ -1,0 +1,24 @@
+.newsFeed{
+    &__title{
+        font-size: 2rem;
+        text-align: center;
+    }
+    &Item{
+        font-size: 1.6rem;
+        display: inline-block;
+        width: 25%;
+        vertical-align: top;
+        margin: 5rem 0;
+        padding: 0 2rem;
+        h2{
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        p{
+            font-size: 1.4rem;
+        }
+    }
+}
+.hacker-news-list{
+    font-size: 2rem;
+}

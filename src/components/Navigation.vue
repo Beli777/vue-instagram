@@ -4,6 +4,7 @@
 <ul>
   <li><router-link to="/register"><span>Register</span></router-link></li>
   <li><router-link to="/login"><span>Login</span></router-link></li>
+  <li><router-link to="/newsfeed"><span>News Feed</span></router-link></li>
 </ul>
 </div>
 </template>
