@@ -26,7 +26,7 @@ export default {
     return {
         login: {
             email: '',
-            password: '',
+            password: ''
         }
     }
   },
@@ -35,6 +35,10 @@ export default {
           Vue.axios.post('https://jsonplaceholder.typicode.com/users/', { email: this.login.email, password: this.login.password })
           .then(function(response){
             console.log(response.data)
+            Vue.http.interceptors.push((request, next) => {
+                request.headers.set('X-XSRF-TOKEN', cookie.parse(document.cookie)['XSRF-TOKEN']);
+                next();
+            });
           })
       }
   }
