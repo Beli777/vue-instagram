@@ -29,21 +29,23 @@ export default {
   },
   methods: {
     onInfinite() {
-      this.$http.get(api, {
+        this.$Progress.start()
+        this.$http.get(api, {
         params: {
           page: this.list.length / 20 + 1,
         },
-      }).then((res) => {
-        if (res.data.hits.length) {
-          this.list = this.list.concat(res.data.hits);
-          this.$refs.infiniteLoading.$emit('$InfiniteLoading:loaded');
-          if (this.list.length / 20 === 10) {
-            this.$refs.infiniteLoading.$emit('$InfiniteLoading:complete');
-          }
-        } else {
-          this.$refs.infiniteLoading.$emit('$InfiniteLoading:complete');
-        }
-      });
+          }).then((res) => {
+            this.$Progress.finish()
+            if (res.data.hits.length) {
+              this.list = this.list.concat(res.data.hits);
+              this.$refs.infiniteLoading.$emit('$InfiniteLoading:loaded');
+              if (this.list.length / 20 === 10) {
+                this.$refs.infiniteLoading.$emit('$InfiniteLoading:complete');
+              }
+            } else {
+              this.$refs.infiniteLoading.$emit('$InfiniteLoading:complete');
+            }
+          });
     },
   },
   components: {

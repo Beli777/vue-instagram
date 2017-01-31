@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import Vue from 'vue'
+const option = {}
 export default {
   name: 'hello',
   data () {
@@ -30,7 +32,10 @@ export default {
   },
   methods: {
       handleLoginFormSubmit(){
-          console.log('success')
+          Vue.axios.post('https://jsonplaceholder.typicode.com/users/', { email: this.login.email, password: this.login.password })
+          .then(function(response){
+            console.log(response.data)
+          })
       }
   }
 }
