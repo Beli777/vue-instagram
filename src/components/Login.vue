@@ -14,6 +14,9 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    <ul class="listUsers">
+    <li v-text="" v-for="user in users">{{user.name}}</li>
+    </ul>
   </div>
 </template>
 
@@ -21,26 +24,34 @@
 import Vue from 'vue'
 const option = {}
 export default {
-  name: 'hello',
+  http: {
+    emulateJSON: true,
+    emulateHTTP: true
+},
+  name: 'login',
   data () {
     return {
         login: {
             email: '',
             password: ''
-        }
+        },
+        users: []
     }
   },
   methods: {
       handleLoginFormSubmit(){
-          Vue.axios.post('https://jsonplaceholder.typicode.com/users/', { email: this.login.email, password: this.login.password })
+          this.$http.get('https://jsonplaceholder.typicode.com/users/', { email: this.login.email })
           .then(function(response){
-            console.log(response.data)
-            Vue.http.interceptors.push((request, next) => {
-                request.headers.set('X-XSRF-TOKEN', cookie.parse(document.cookie)['XSRF-TOKEN']);
-                next();
+            this.users = response.data
             });
-          })
       }
   }
 }
 </script>
+<style lang="scss" scoped>
+.listUsers{
+  li{
+    font-size: 1.6rem;
+  }
+}
+</style>
