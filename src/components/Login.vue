@@ -15,7 +15,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     <ul class="listUsers">
-    <li v-text="" v-for="user in users">{{user.name}}</li>
+    <li v-text="" v-for="user in user">{{user.name}}</li>
     </ul>
   </div>
 </template>
@@ -35,14 +35,18 @@ export default {
             email: '',
             password: ''
         },
-        users: []
+        user: []
     }
   },
   methods: {
       handleLoginFormSubmit(){
-          this.$http.get('https://jsonplaceholder.typicode.com/users/', { email: this.login.email })
+          this.$http.get('https://jsonplaceholder.typicode.com/users/')
           .then(function(response){
-            this.users = response.data
+                if(this.login.email === "Sincere@april.biz"){
+                    this.user = response.data
+                }else{
+                  alert('error')
+                }
             });
       }
   }
