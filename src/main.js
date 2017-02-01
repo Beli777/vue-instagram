@@ -10,6 +10,7 @@ import routes from './routes'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
+
 // Resource logic
 Vue.use(Resource)
 Vue.use(VueRouter)
