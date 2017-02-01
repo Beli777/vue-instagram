@@ -2,6 +2,7 @@ import Register from './components/Register'
 import Login from './components/Login'
 import NewsFeed from './components/NewsFeed'
 import Home from './components/Home'
+import Books from './components/Books'
 
 // Routes
 const routes = [
@@ -20,7 +21,12 @@ const routes = [
   {
     path: '/newsfeed',
     component: NewsFeed
+  },
+  {
+    path: '/books',
+    component: Books  
   }
+
 ]
 
 export default routes

@@ -15,7 +15,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     <ul class="listUsers">
-    <li v-text="" v-for="user in user">{{user.name}}</li>
+    <li v-text="" v-for="user in users">{{user.name}}</li>
     </ul>
   </div>
 </template>
@@ -35,7 +35,7 @@ export default {
             email: '',
             password: ''
         },
-        user: []
+        users: []
     }
   },
   methods: {
@@ -43,7 +43,7 @@ export default {
           this.$http.get('https://jsonplaceholder.typicode.com/users/')
           .then(function(response){
                 if(this.login.email === "Sincere@april.biz"){
-                    this.user = response.data
+                    this.users = response.data
                 }else{
                   alert('error')
                 }

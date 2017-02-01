@@ -1,16 +1,21 @@
 // Import System requirements
 import Vue from 'vue'
+import VueFire from 'vuefire'
 import App from './App'
+
 import VueProgressBar from 'vue-progressbar'
 import Resource from 'vue-resource'
 import VueRouter from 'vue-router'
 import routes from './routes'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+
 // Resource logic
 Vue.use(Resource)
 Vue.use(VueRouter)
 Vue.use(VueAxios, axios)
+Vue.use(VueFire)
+
 //--Progress Bar
 const options = {
   color: 'green',
