@@ -1,4 +1,3 @@
-import Register from './components/Register'
 import Login from './components/Login'
 import NewsFeed from './components/NewsFeed'
 import Home from './components/Home'
@@ -11,10 +10,6 @@ const routes = [
     component: Home
   },
   {
-    path: '/register',
-    component: Register
-  },
-  {
     path: '/login',
     component: Login
   },
@@ -24,7 +19,7 @@ const routes = [
   },
   {
     path: '/books',
-    component: Books  
+    component: Books
   }
 
 ]
