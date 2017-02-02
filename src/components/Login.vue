@@ -36,15 +36,18 @@ export default {
         const password = txtPassword.value;
         const auth = firebase.auth();
         auth.signInWithEmailAndPassword(email , password)
+
+
           .then(function(firebaseUser) {
                  console.log('nice')
-                 firebase.auth().currentUser.getToken()
-                .then(function(idToken) {
-                    console.log(idToken)
-                }).catch(function(error) {
-                    console.log('fail hard')
-                });
+                 firebase.auth().currentUser.getToken(true)
+                  .then(function(idToken) {
+                      console.log(idToken)
+                  }).catch(function(error) {
+                      console.log('fail hard')
+                  });
              })
+
             .catch(function(error) {
                   console.log('fail')
             });

@@ -4,6 +4,9 @@ import Home from './components/Home'
 import Books from './components/Books'
 
 // Routes
+const token = firebase.auth().currentUser.getToken(true).then(function(idToken){
+  console.log(idToken)
+})
 const routes = [
   {
     path: '/',
@@ -19,7 +22,8 @@ const routes = [
   },
   {
     path: '/books',
-    component: Books
+    component: Books,
+    name: 'books'
   }
 
 ]

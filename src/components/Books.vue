@@ -64,6 +64,7 @@
 
 <script>
 import Firebase from 'firebase'
+import { database as code } from './js/database.js'
 let app = Firebase.initializeApp(config);
 let db = app.database();
 
